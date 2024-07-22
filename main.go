@@ -6,21 +6,15 @@ import (
 	"time"
 )
 
-// Main function to test the structs and functions
 func main() {
 	// Seed the random number generator
 	rand.Seed(time.Now().UnixNano())
 
 	// Create a player
-	player := Player{
-		name:   "John",
-		points: 0,
-		x:      0,
-		y:      0,
-	}
+	player := newPlayer("John", 0, 0)
 
 	// Create a new map
-	gameMap := newMap("MyGameMap", player, 5)
+	gameMap := newMap("MyGameMap", *player, 5)
 
 	// Print the map details
 	fmt.Printf("Map Name: %s\n", gameMap.name)
