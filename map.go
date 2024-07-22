@@ -1,5 +1,7 @@
 package main
 
+import "math/rand"
+
 type Graph struct {
 	n      int
 	matrix [][]int
@@ -11,6 +13,11 @@ type Map struct {
 	web    Graph
 	player Player
 	snake  Snake
+}
+
+func (g *Graph) addEdge(from int, to int, weight int) {
+	g.matrix[from][to] = weight
+	g.matrix[to][from] = weight
 }
 
 func newGraph(n int) *Graph {
@@ -28,10 +35,17 @@ func newGraph(n int) *Graph {
 }
 
 func newMap(name string, player Player, size int) *Map {
+	graph := newGraph(size)
+	for i := range size {
+		for j := range size {
+			graph.addEdge(i, j, (rand.Int() % 10))
+
+		}
+	}
 	return &Map{
 		name:   name,
 		size:   size,
-		web:    *newGraph(size),
+		web:    *graph,
 		player: player,
 		snake:  *newSnake(),
 	}
