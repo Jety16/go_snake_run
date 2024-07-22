@@ -11,7 +11,7 @@ func main() {
 	rand.Seed(time.Now().UnixNano())
 
 	// Create a player
-	player := newPlayer("John", 0, 0)
+	player := newPlayer("John", 3, 2)
 
 	// Create a new map
 	gameMap := newMap("MyGameMap", *player, 5)
