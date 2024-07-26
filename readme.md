@@ -5,7 +5,9 @@ A simple Go project to create a snake game with a player and a snake on a map. T
 ## Features
 
 - [x] **Make the Kickstarter for my project**
-- [ ]  **Add method to find the shortest path from the snake to the player and return the distance**
+- [x]  **Add method to find the shortest path from point A to point B and return the distance**
+- [x] **Use the method with the snake and player**
+- [ ]  **Update the map weights based on that update**
 - [ ] **Make the snake move to the first node from the shortest path**
 - [ ] **Make the player able to move**
 
